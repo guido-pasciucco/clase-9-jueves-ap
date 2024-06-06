@@ -1,0 +1,138 @@
+/* MAS GENERAL */ 
+
+*{
+    text-align: center;
+    margin: 0px;
+}
+body{
+    margin-top: 150px !important;
+    background-color: brown;
+}
+
+h1 {
+    color: white !important;
+}
+
+.navbar { 
+    position: fixed !important;
+    top: 0px !important;
+    left: 0px !important;
+    width: 100% !important;
+    z-index: 3;
+}
+
+/* CONTENEDOR LÍMITE */
+
+.contenedorLimite {
+    max-width: 50%; /* ANCHO MAX DE MI ELEMENTO */
+    margin: 0px auto; /* BORDE EXT - CENTRAR EL ELEMENTO  */
+    padding: 10px 30px; /* BORDE INTERNO */
+    z-index: 1;
+    margin-top: 100px;
+}
+
+
+main div {
+    padding: 20px;
+}
+
+/*
+POSITION
+    - STATIC (default) - sigue el orden del HTML
+    - RELATIVE - modifica posición partiendo del orden del HTML
+    - ABSOLUTE - modifica posición ignorando el orden original en el HTML
+    - FIXED
+    - STICKY
+*/
+
+#perritoEspecial {
+    position: sticky;
+    top: 200px;
+}
+
+nav {
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    /* ORDENAR CONTENIDO GRUPALMENTE*/
+    justify-content: space-evenly;  /* EJE HORIZONTAL */
+    align-items: center; /* EJE VERTICAL */
+}
+nav a {
+    text-decoration: none;
+    color: white
+}
+
+#especial {
+    /* ORDENAR CONTENIDO INDIVIDUALMENTE */
+    align-self: stretch; /* EJE VERTICAL */
+    /* justify-self */
+}
+
+
+.cFlex {
+    margin-top: 200px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.card {
+    padding: 20px;
+    border-radius: 15%;
+    margin: 20px;
+    display: flex; /* cada card va a tener flexbox dentro */
+    flex-direction: column;
+    align-items: center;
+    width: 15%;
+    background-color: bisque;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: all 0.5s ease-in-out;   
+}
+
+/* CUANDO APOYO EL MOUSE EN UN ELEMENTO CON CLASE CARD... */
+.card:hover {
+    /* PASA TAL COSA...
+    cambiar ubicación - transform: translate(-20px, -40px);
+    transform: rotate(60deg);
+    */
+    color: white;
+    background-color: black;
+    transform: scale(1.1);
+    transition: all 0.5s ease;    
+}
+
+.cFlex div img, .cFlex div p {
+    margin: 10px;
+}
+
+
+
+
+/*
+TRUCOS PARA EL SELECTOR DE CSS
+    - , APLICANDO MÁS DE UN SELECTOR 
+    - ESP - "ANIDANDO"
+    - PSEUDOCLASES
+*/
+
+/* Dispositivos Medianos */
+@media (max-width: 768px){
+    body { background-color: blue; }
+    .contenedorLimite { max-width: 75%; }
+    .card { width: 25%; }
+}
+/* Dispositivos Pequeños */
+@media (max-width: 576px){
+    body{
+        background-color: yellow;
+    }
+    .contenedorLimite {
+        max-width: 80%;
+    }
+    .card{
+        width: 100%;
+    }
+}
